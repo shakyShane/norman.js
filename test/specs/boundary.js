@@ -32,7 +32,6 @@ describe("Checking hit area", function() {
     });
     it("can return the correct value when in RIGHT BOUNDARY (3)", function () {
         var actual   = mapper.getBoundary("x", 301);
-        console.log(actual);
         assert.deepEqual(actual, -100);
     });
     it("can return the correct value when in TOP BOUNDARY", function () {
