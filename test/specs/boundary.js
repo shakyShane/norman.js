@@ -1,6 +1,6 @@
 describe("Checking hit area", function() {
 
-    var viewBox, subject, mapper;
+    var mapper;
 
     beforeEach(function () {
 
@@ -14,44 +14,33 @@ describe("Checking hit area", function() {
             boundary: 30
         };
 
-        subject = {
+        var subject = {
             height: 400,
             width: 400
         };
 
-        mapper = new Norman(config)
-            .mapTo(subject);
+        mapper = new Norman(config).mapTo(subject);
     });
 
-    it("can return an entered boundary (LEFT) ", function () {
-        var actual   = mapper.checkBoundary("x", 29);
-        var expected = "LEFT";
-        assert.deepEqual(actual, expected);
+    it("can return the correct value when in LEFT BOUNDARY", function () {
+        var actual   = mapper.getBoundary("x", 29);
+        assert.deepEqual(actual, 0);
     });
-    it("can return an entered boundary (LEFT) (2) ", function () {
-        var actual   = mapper.checkBoundary("x", 31);
-        var expected = false;
-        assert.deepEqual(actual, expected);
+    it("can return the correct value when in RIGHT BOUNDARY (2)", function () {
+        var actual   = mapper.getBoundary("x", 290);
+        assert.deepEqual(actual, -100);
     });
-    it("can return an entered boundary (LEFT) (3) ", function () {
-        var actual   = mapper.checkBoundary("x", 30);
-        var expected = "LEFT";
-        assert.deepEqual(actual, expected);
+    it("can return the correct value when in RIGHT BOUNDARY (3)", function () {
+        var actual   = mapper.getBoundary("x", 301);
+        console.log(actual);
+        assert.deepEqual(actual, -100);
     });
-
-    it("can return an entered boundary (RIGHT) ", function () {
-        var actual   = mapper.checkBoundary("x", 290);
-        var expected = "RIGHT";
-        assert.deepEqual(actual, expected);
+    it("can return the correct value when in TOP BOUNDARY", function () {
+        var actual   = mapper.getBoundary("y", 1);
+        assert.deepEqual(actual, 0);
     });
-    it("can return an entered boundary (RIGHT) (2) ", function () {
-        var actual   = mapper.checkBoundary("x", 269);
-        var expected = false;
-        assert.deepEqual(actual, expected);
-    });
-    it("can return an entered boundary (RIGHT) (3) ", function () {
-        var actual   = mapper.checkBoundary("x", 270);
-        var expected = "RIGHT";
-        assert.deepEqual(actual, expected);
+    it("can return the correct value when in TOP BOUNDARY", function () {
+        var actual   = mapper.getBoundary("y", 290);
+        assert.deepEqual(actual, -100);
     });
 });

@@ -1,21 +1,22 @@
 describe("Checking hit area", function() {
 
-    var viewBox, subject, mapper;
+    var mapper;
 
     beforeEach(function () {
-        viewBox = {
+
+        var viewBox = {
             height: 300,
             width: 300,
             x: 0,
             y: 0
         };
-        subject = {
+
+        var subject = {
             height: 400,
             width: 400
         };
-        mapper = new Norman({viewBox: viewBox})
-            .mapTo(subject);
 
+        mapper = new Norman({viewBox: viewBox}).mapTo(subject);
     });
 
     it("should with defaults", function() {
