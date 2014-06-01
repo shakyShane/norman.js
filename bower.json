@@ -1,0 +1,11 @@
+{
+    "name": "norman.js",
+    "version": "0.0.1",
+    "main": [
+        "dist/norman.js"
+    ],
+    "ignore": [
+        "node_modules/",
+        "test/"
+    ]
+}
