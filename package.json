@@ -28,7 +28,7 @@
     "test": "karma start test/karma.conf.ci"
   },
   "devDependencies": {
-    "karma": "*",
+    "karma": "^0.12.16",
     "karma-mocha": "~0.1.1",
     "karma-firefox-launcher": "^0.1.3",
     "karma-html2js-preprocessor": "^0.1.0",
