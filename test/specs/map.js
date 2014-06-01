@@ -23,8 +23,11 @@ describe("MAP E2E", function() {
         var actual   = mapper.map(150, 150);
         var expected = {
             x: -50,
-            y: -50
+            y: -50,
+            inHitArea: true,
+            inBoundary: false
         };
+        console.log(actual);
         assert.deepEqual(actual, expected);
     });
 
@@ -32,7 +35,9 @@ describe("MAP E2E", function() {
         var actual   = mapper.map(300, 0);
         var expected = {
             x: -100,
-            y: 0
+            y: 0,
+            inHitArea: true,
+            inBoundary: true
         };
         assert.deepEqual(actual, expected);
     });
