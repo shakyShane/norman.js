@@ -27,7 +27,6 @@ describe("MAP E2E", function() {
             inHitArea: true,
             inBoundary: false
         };
-        console.log(actual);
         assert.deepEqual(actual, expected);
     });
 
