@@ -12,7 +12,7 @@ module.exports = {
 
     // list of files / patterns to load in the browser
     files: [
-        '../lib/*.js',
+        '../dist/*.js',
         'vendor/assert.js',
         'specs/*.js'
     ],
